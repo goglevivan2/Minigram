@@ -3,10 +3,10 @@ import clientui
 import requests
 import datetime
 class ExampleApp(QtWidgets.QMainWindow,clientui.Ui_MainWindow):
-    def __init__(self):
+    def __init__(self, url):
         super().__init__()
         self.setupUi(self)
-
+        self.url = url
         self.pushButton.pressed.connect(self.send_message)
 
         self.last_timestamp = 0
@@ -21,7 +21,7 @@ class ExampleApp(QtWidgets.QMainWindow,clientui.Ui_MainWindow):
         #pass
         #message
         requests.get(
-            'http://127.0.0.1:5000/send_message',
+            self.url+'/send_message',
             json={
                 'username': username,
                 'password': password,
@@ -32,7 +32,7 @@ class ExampleApp(QtWidgets.QMainWindow,clientui.Ui_MainWindow):
 
     def update_messages(self):
         response = requests.get(
-            'http://127.0.0.1:5000/get_messages',
+            self.url+'/get_messages',
             params={'after': self.last_timestamp}
         )
         messages = response.json()['messages']
@@ -40,13 +40,13 @@ class ExampleApp(QtWidgets.QMainWindow,clientui.Ui_MainWindow):
         for message in messages:
             dt = datetime.datetime.fromtimestamp(message['timestamp'])
             dt = dt.strftime('%H:%M:%S %d/%m/%Y')
-            self.textBrowser.append(dt + ' ' + message['username'])
+            self.textBrowser.append('<h4>'+dt + ' ' + message['username']+'</h4>')
             self.textBrowser.append(message['text'])
             self.textBrowser.append('')
             self.last_timestamp = message['timestamp']
 
 
 app =QtWidgets.QApplication([])
-window=ExampleApp()
+window=ExampleApp('http://goglevivan.pythonanywhere.com')
 window.show()
 app.exec_()

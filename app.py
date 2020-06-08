@@ -5,8 +5,8 @@ import time
 app = Flask(__name__)
 server_start = datetime.now().strftime('%H:%M:%S %d/%m/%Y')
 messages = [
-    {'username': 'jack', 'text': 'Hello everyone!', 'timestamp': time.time()},
-    {'username': 'jack2', 'text': 'Hello jack!', 'timestamp': time.time()},
+    #{'username': 'jack', 'text': 'Hello everyone!', 'timestamp': time.time()},
+    #{'username': 'jack2', 'text': 'Hello jack!', 'timestamp': time.time()},
 ]
 # лучше в таком виде пароли не хранить
 users = {
