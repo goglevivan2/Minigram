@@ -5,12 +5,16 @@ import time
 app = Flask(__name__)
 server_start = datetime.now().strftime('%H:%M:%S %d/%m/%Y')
 messages = [
+    {'username': 'Information', 'text': '''Это хаб для пользователей  тут можно общаться и искать каналы. 
+    Для создания или перехода в канал необходимо ввести в поле chanel название канала и нажать на change.
+    Вы всегда можете вернуться вписав в поле chanel название hub и нажать на change.''',
+     'timestamp': time.time(),'chanel':'hub'},
     #{'username': 'jack', 'text': 'Hello everyone!', 'timestamp': time.time()},
     #{'username': 'jack2', 'text': 'Hello jack!', 'timestamp': time.time()},
 ]
 # лучше в таком виде пароли не хранить
 users = {
-    'jack': '12345',
+    'Information': '12345',
     'jack2': '12345',
 }
 
@@ -68,6 +72,9 @@ def send_message()->dict:
         username = request.json['username']
         password = request.json['password']
         text = request.json['text']
+        chanel=request.json['chanel']
+        if chanel == '':
+            chanel = 'hub'
 
         if username in users:
             if users[username] != password:
@@ -88,7 +95,7 @@ def send_message()->dict:
                 result_text+=word+' '
         #это можно ещё и увеличить и добавить новое
         ########################
-        messages.append({"username": username, "text": result_text, "timestamp": time.time()})
+        messages.append({"username": username, "text": result_text, "timestamp": time.time(),"chanel":chanel})
         # text ?
         return {"ok": True, "error": None}
     except Exception as e:
@@ -114,9 +121,10 @@ def get_messages()->dict:
     '''
     try:
         after = float(request.args['after'])
+        ch =str(request.args['chanel'])
         result = []
         for message in messages:
-            if message['timestamp'] > after:
+            if message['timestamp'] > after and message['chanel'] == ch:
                 result.append(message)
         return {
             "messages": result,

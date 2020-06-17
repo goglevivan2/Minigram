@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>685</height>
+    <width>497</width>
+    <height>713</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,18 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>380</x>
       <y>590</y>
       <width>101</width>
-      <height>61</height>
+      <height>111</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Terminal</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Send</string>
@@ -30,17 +37,18 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>0</y>
-      <width>141</width>
+      <x>20</x>
+      <y>-10</y>
+      <width>461</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Perpetua</family>
+      <family>Terminal</family>
+      <pointsize>12</pointsize>
       <weight>75</weight>
-      <italic>true</italic>
+      <italic>false</italic>
       <bold>true</bold>
      </font>
     </property>
@@ -53,38 +61,60 @@
     <property name="textFormat">
      <enum>Qt::RichText</enum>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>80</y>
-      <width>391</width>
-      <height>481</height>
+      <x>20</x>
+      <y>30</y>
+      <width>461</width>
+      <height>511</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+     </font>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
+      <x>20</x>
+      <y>550</y>
       <width>113</width>
-      <height>22</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="placeholderText">
-     <string>Uesrname</string>
+     <string>username</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>50</y>
+      <x>140</x>
+      <y>550</y>
       <width>113</width>
-      <height>22</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="placeholderText">
      <string>password</string>
@@ -93,14 +123,61 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>590</y>
-      <width>281</width>
-      <height>61</height>
+      <width>351</width>
+      <height>111</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>8</pointsize>
+      <italic>false</italic>
+     </font>
+    </property>
     <property name="placeholderText">
-     <string>Введите сообщение...</string>
+     <string>write your message...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>550</y>
+      <width>113</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="placeholderText">
+     <string>chanel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>550</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Terminal</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>change </string>
     </property>
    </widget>
   </widget>
