@@ -9,13 +9,10 @@ messages = [
     Для создания или перехода в канал необходимо ввести в поле chanel название канала и нажать на change.
     Вы всегда можете вернуться вписав в поле chanel название hub и нажать на change.''',
      'timestamp': time.time(),'chanel':'hub'},
-    #{'username': 'jack', 'text': 'Hello everyone!', 'timestamp': time.time()},
-    #{'username': 'jack2', 'text': 'Hello jack!', 'timestamp': time.time()},
 ]
-# лучше в таком виде пароли не хранить
+
 users = {
-    'Information': '12345',
-    'jack2': '12345',
+    'Information': '1806f63b426354e43b75862eeccdd548b45f33830aed7f388432e6fe2794128a31379627d3f8bdb231cba902e8c28893',
 }
 
 @app.route('/')

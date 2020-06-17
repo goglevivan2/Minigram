@@ -14,16 +14,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(497, 713)
+        MainWindow.resize(480, 740)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(380, 590, 101, 111))
+        self.pushButton.setGeometry(QtCore.QRect(370, 590, 101, 131))
         font = QtGui.QFont()
         font.setFamily("Terminal")
         font.setBold(True)
         font.setWeight(75)
         self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("QPushButton{\n"
+"      text-align: center;\n"
+"}\n"
+"QPushButton:hover{\n"
+"   background-color:silver;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:gray;\n"
+"}")
         self.pushButton.setObjectName("pushButton")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(20, -10, 461, 51))
@@ -39,13 +48,17 @@ class Ui_MainWindow(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(20, 30, 461, 511))
+        self.textBrowser.setGeometry(QtCore.QRect(10, 30, 461, 511))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         self.textBrowser.setFont(font)
+        self.textBrowser.setStyleSheet("QTextBrowser{\n"
+"background-color:rgb(255, 255, 255);\n"
+"}\n"
+"")
         self.textBrowser.setObjectName("textBrowser")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(20, 550, 113, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(10, 550, 113, 31))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         font.setBold(True)
@@ -53,15 +66,17 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(140, 550, 113, 31))
+        self.lineEdit_2.setGeometry(QtCore.QRect(130, 550, 113, 31))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         font.setBold(True)
         font.setWeight(75)
         self.lineEdit_2.setFont(font)
+        self.lineEdit_2.setStyleSheet("")
+        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(20, 590, 351, 111))
+        self.textEdit.setGeometry(QtCore.QRect(10, 590, 351, 131))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         font.setPointSize(8)
@@ -69,7 +84,7 @@ class Ui_MainWindow(object):
         self.textEdit.setFont(font)
         self.textEdit.setObjectName("textEdit")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(260, 550, 113, 31))
+        self.lineEdit_3.setGeometry(QtCore.QRect(250, 550, 113, 31))
         font = QtGui.QFont()
         font.setFamily("Microsoft YaHei")
         font.setBold(True)
@@ -77,12 +92,21 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(380, 550, 101, 31))
+        self.pushButton_2.setGeometry(QtCore.QRect(370, 550, 101, 31))
         font = QtGui.QFont()
         font.setFamily("Terminal")
         font.setBold(True)
         font.setWeight(75)
         self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("QPushButton{\n"
+"      text-align: center;\n"
+"}\n"
+"QPushButton:hover{\n"
+"   background-color:silver;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color:gray;\n"
+"}")
         self.pushButton_2.setObjectName("pushButton_2")
         MainWindow.setCentralWidget(self.centralwidget)
 
